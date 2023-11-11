@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<style>
+*{
+    font-family: 'Courier New';
+    text-align: center;
+}
+/* Age finder */
+
+
+  div.agefinder .btn{
+    position: relative;
+    padding: 20px;
+    width: 200px;
+    background-color: rgb(229, 119, 119);
+  }
+  div.agefinder .btn:hover{
+    position: relative;
+    padding: 20px;
+    width: 200px;
+    background-color: brown;
+  }
+/* Date finder */
+div.datefinder .btn2{
+    position: relative;
+    padding: 20px;
+    width: 200px;
+    background-color: rgb(229, 119, 119);
+}
+div.datefinder .btn2:hover{
+    position: relative;
+    padding: 20px;
+    width: 200px;
+    background-color: brown;
+  }
+</style>
+<body>
+    
+<script>
+
+function agecalc(){ 
+let name= prompt("Enter your name:");
+// For English date
+let Dt = new Date();
+let yr = Dt.getFullYear();
+let user_year =parseInt(prompt("Enter your birth year(In Ad)",yr));
+let age=yr-user_year;
+
+// for Nepali date
+let user_year2 =parseInt(prompt("Enter your birth year(In BS)",user_year+57));
+let yr2=yr+57;
+let age2=yr2-user_year2;
+
+if(age==age2){
+    document.write("Age of ",name," is ",age," years.<br>");
+}
+else{
+    document.write("Wrong dates.");
+}
+}
+
+function datecalc(){
+    let name= prompt("Enter your name:");
+// for English date 
+    let Dt = new Date();
+let yr = Dt.getFullYear();
+let age=parseInt(prompt("Enter your age: "));
+let eng_date=yr-age;
+//For nepali date
+let nep_date=eng_date+57;
+document.write("You were born in ",eng_date," AD or ",nep_date," BS.");
+}    
+</script>
+<div class="agefinder">
+    <h1> Age Finder</h1>
+<button class="btn" onclick="agecalc()">click</button>
+</div>
+<div class="datefinder">
+    <h1> Date Finder</h1>
+    <button class="btn2" onclick="datecalc()">Click</button>
+</div>
+</body>
+</html> 
